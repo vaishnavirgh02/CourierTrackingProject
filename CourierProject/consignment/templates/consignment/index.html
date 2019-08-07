@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="index.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    </head>
+{% extends 'consignment/base_template.html' %}
 
-    <body>
-
-        <!--Navbar-->
-        <div class="topnav">
-        <a class="active"><b>Courier Tracker</b></a>
-        <a href="#news">Home</a>
-        <a href="#news">About Us</a>
-        <a href="#contact">Track</a>
-        <a href="#about">Staff Login</a>
-        </div>
-
+{% block content %}
+{% load static %}
        <!-- Slideshow container -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -27,13 +11,13 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="images/img_nature_wide.jpg" class="d-block w-100" alt="...">
+                    <img src="{% static 'consignment/images/img_nature_wide.jpg' %}" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="images/img_lights_wide.jpg" class="d-block w-100" alt="...">
+                    <img src="{% static 'consignment/images/img_lights_wide.jpg' %}" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
-                    <img src="images/img_woods_wide.jpg" class="d-block w-100" alt="...">
+                    <img src="{% static 'consignment/images/img_woods_wide.jpg' %}" class="d-block w-100" alt="...">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -61,57 +45,8 @@
                     <p>To provide innovative, secure and uninterrupted connection systems and processes which can be obtained always-on / from everywhere that protect the privacy of personal information wherever daily lives of individuals meet with technology.</p>
                 </div>
             </div>
-        </div>                 
+        </div>     
         
-        <footer class="section footer-classic context-dark bg-image" style="background: #333;">
-            <div class="container">
-                <div class="row row-30">
-                    <div class="col-md-4 col-xl-5">
-                        <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
-                        <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
-                        <!-- Rights-->
-                        <p class="rights"><span>©  </span><span class="copyright-year">2019</span><span> </span><span>Waves</span><span>. </span><span>All Rights Reserved.</span></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <h5>Contacts</h5>
-                        <dl class="contact-list">
-                        <dt>Corporate Office:</dt>
-                        <dd>798 South Park Avenue, Bhopal, Madhya pradesh</dd>
-                        </dl>
-                        <dl class="contact-list">
-                        <dt>email:</dt>
-                        <dd><a href="mailto:#">courierproject@gmail.com</a></dd>
-                        </dl>
-                        <dl class="contact-list">
-                        <dt>phones:</dt>
-                        <dd><a href="tel:#">+91 7568543012</a> <span>or</span> <a href="tel:#">+91 9571195353</a>
-                        </dd>
-                        </dl>
-                    </div>
-                    <div class="col-md-4 col-xl-3">
-                        <h5>Links</h5>
-                        <ul class="nav-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Track your consignment</a></li>
-                        <li><a href="#">Nearest center</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row no-gutters social-container">
-                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
-                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
-                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
-                <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
-            </div>
-            </footer>
+{% endblock content %}
+        
 
-    </body>
-
-    <script src="index.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</html>

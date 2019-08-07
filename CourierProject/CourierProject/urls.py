@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     ## This url will connect urls of other apps
     path('consignment/', include('consignment.urls')),
-    path('users/', include('users.urls'))
 ]
