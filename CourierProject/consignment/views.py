@@ -5,5 +5,5 @@ def Index(request):
     return render(request, 'consignment/index.html')
 
 
-def Dashboard(requests):
+def Dashboard(request):
     return render(request, 'consignment/dashboard.html')

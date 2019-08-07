@@ -12,11 +12,11 @@
 
         <!--Navbar-->
         <div class="topnav">
-            <a class="active"><b>Courier Tracker</b></a>
-            <a href="#news">Home</a>
+            <a class="active" href="{% url 'index-page' %}"><b>Courier Tracker</b></a>
+            <a href="{% url 'index-page' %}">Home</a>
             <a href="#news">About Us</a>
             <a href="#contact">Track</a>
-            <a href="#about">Staff Login</a>
+            <a href="{% url 'login' %}">Staff Login</a>
         </div>
 
         {% block content %}{% endblock %}
