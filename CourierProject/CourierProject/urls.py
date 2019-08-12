@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     ## This url will connect urls of other apps
     path('consignment/', include('consignment.urls')),
+    path('user/', include('users.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
 ]
