@@ -42,3 +42,7 @@ def UpdateTrackInfo(request):
     return render(request, 'consignment/update.html',{'form': form})
 
 
+def ViewConsignment(request):
+    if request.method == "POST"
+
+
