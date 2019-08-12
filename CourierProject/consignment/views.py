@@ -40,9 +40,3 @@ def UpdateTrackInfo(request):
     else:
         form = ConsignmentUpdateForm()
     return render(request, 'consignment/update.html',{'form': form})
-
-
-def ViewConsignment(request):
-    if request.method == "POST"
-
-
