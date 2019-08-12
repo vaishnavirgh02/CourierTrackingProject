@@ -3,6 +3,12 @@ from django.contrib import messages
 from .forms import UserRegisterForm, ProfileRegisterForm
 from django.contrib.auth.models import Group
 
+def Login_success(request):
+    if request.user.groups.filter(name='staff').exists():
+        return redirect('dashboard')
+    else:
+        return redirect('index-page')
+
 def Register(request):
     if request.method == 'POST':
         user_form = UserRegisterForm(request.POST)
