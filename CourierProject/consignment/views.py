@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import DeliveryProgress, Consignment
 from django.contrib.auth.decorators import user_passes_test
 from .forms import ConsignmentRegisterForm, ConsignmentUpdateForm
 from django.contrib import messages
@@ -13,7 +14,7 @@ def user_check(user):
 
 @user_passes_test(user_check)
 def Dashboard(request):
-    return render(request, 'consignment/dashboard.html')
+    return render(request, 'consignment/dashboard.html', {'user': request.user})
 
 
 @user_passes_test(user_check)
@@ -40,3 +41,18 @@ def UpdateTrackInfo(request):
     else:
         form = ConsignmentUpdateForm()
     return render(request, 'consignment/update.html',{'form': form})
+
+
+def ConsignmentTrack(request):
+    if request.method == "POST" and request.POST['search'] != '':
+        print(request.POST.get('search', False)) 
+        form = DeliveryProgress.objects.filter(consignment_id = int(request.POST.get('search', False)))
+        form_default = DeliveryProgress.objects.filter(consignment_id = int(request.POST.get('search', False))).first()
+        print(form)
+        return render(request, 'consignment/consignment-track.html', {'forms': form, 'form2': form_default })
+
+    else:
+        form = DeliveryProgress.objects.filter(consignment_id = 1 ).all()
+        form_default = DeliveryProgress.objects.filter(consignment_id = 1 ).first()
+        print(form)
+        return render(request, 'consignment/consignment-track.html', {'forms': form, 'form2': form_default })

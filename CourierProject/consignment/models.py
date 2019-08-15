@@ -9,13 +9,13 @@ class Office(models.Model):
     office_pincode = models.IntegerField(unique = True)
 
     def __str__(self):
-        return f'{ self.office_code } {self.office_pincode}'
+        return f'{ self.office_name } {self.office_pincode}'
 
 
 
 # Create your models here.
 class Consignment(models.Model):
-    CONSIGNMENT_TYPE = [('Letter', 'Letter')]
+    CONSIGNMENT_TYPE = [('Paper/Documents', 'Paper/Documents'), ('Fragile', 'Fragile'), ('Fluid', 'Fluid'), ('Electronics', 'Electronics')]
     PACKAGE_SIZE = [('S', 'Small'), ('M', 'Medium'), ('L', 'Large')]
     SERVICE_TYPE = [('Premium', 'Premium'), ('Overnight', 'Overnight'), ('Regular', 'Regular')]
 

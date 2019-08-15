@@ -1,0 +1,33 @@
+{% extends "consignment/base_template.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container" align="right"> 
+            <h4>Hello, <b>{{ user.first_name }}</b></h4> 
+        </div>
+    {% endif %}
+    <form class="example" action="{% url 'consignment-track' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Enter your consignment track no. or consignment name" name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="container">
+        <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="#">{{ form2.consignment.consignment_sender.first_name }} {{ form2.consignment.consignment_sender.last_name }}</a>
+                        <small class="text-muted">{{ form2.consignment.material }}</small>
+                    </div> 
+                    <h4><a class="article-title" href="#">{{ form2.consignment.consignment_name }}</a></h4>
+                   
+                    <ul class="list-group">
+                        {% for formed in forms %}
+                            <li class="list-group-item">your consignment was {{ formed.event }} at {{ formed.hub.office_name }} </li>                     
+                        {% endfor %}
+                    </ul>
+                    
+                    <p class="article-content">Package size: {{ form2.consignment.package_size }}</p>
+            </div>
+        </article>
+    </div>
+
+{% endblock content %}

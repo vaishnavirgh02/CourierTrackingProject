@@ -18,12 +18,15 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from consignment import views as consignment_views
 
 
 urlpatterns = [
+    path('', consignment_views.Index),
     path('admin/', admin.site.urls),
     ## This url will connect urls of other apps
     path('consignment/', include('consignment.urls')),
     path('user/', include('users.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    path('logout/', auth_views. LogoutView.as_view(template_name='users/logout.html'), name='logout')
 ]

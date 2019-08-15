@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.Index, name='index-page'),
     path('Dashboard/', views.Dashboard, name='dashboard'),
     path('Register/', views.Register, name = 'consignment-register'),
-    path('Update/', views.UpdateTrackInfo, name='consignment-update')
+    path('Update/', views.UpdateTrackInfo, name='consignment-update'),
+    path('Track/', views.ConsignmentTrack, name='consignment-track')
 ]

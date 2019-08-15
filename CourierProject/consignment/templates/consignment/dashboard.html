@@ -1,4 +1,25 @@
 {% extends "consignment/base_template.html" %}
 {% block content %}
-    <div class="container"> <h1>Dashboard comming soon! </h1> </div>
+    {% if user.is_authenticated %}
+        <div class="container" align="right"> 
+            <h4>welcome to dashboard, <b>{{ user.username }}</b></h4> 
+        </div>
+    {% endif %}
+
+    <div class="jumbotron">
+        <h1 class="display-4">Register a new consignment</h1>
+        <p class="lead">If you need to register a new consignment, click below</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'consignment-register' %}" role="button">Register</a>
+    </div>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Update a new location</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'consignment-update' %}" role="button">Update a consignment</a>
+    </div>
+
 {% endblock content %}
