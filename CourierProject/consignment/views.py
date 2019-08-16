@@ -9,6 +9,9 @@ from django.contrib import messages
 def Index(request):
     return render(request, 'consignment/index.html')
 
+def About(request):
+    return render(request, 'consignment/about.html')
+
 def user_check(user):
     return user.groups.filter(name='staff').exists()
 
@@ -36,7 +39,7 @@ def UpdateTrackInfo(request):
         form = ConsignmentUpdateForm(request.POST)
         if form.is_valid():
             user = form.save()
-            messages.success(request, f'Your account was successfully created!')
+            messages.success(request, f'Your account was successfully updated')
             return redirect('dashboard')
     else:
         form = ConsignmentUpdateForm()
